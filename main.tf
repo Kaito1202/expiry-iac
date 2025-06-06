@@ -23,7 +23,7 @@ module "eks" {
   cluster_version = "1.32"
   subnet_ids      = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
-
+  kms_key_aliases = ["eks/expiry-eks-v2"] 
   eks_managed_node_groups = {
     default = {
       desired_size = 2
